@@ -9,4 +9,8 @@ public interface AreaService {
 	public void saveArea(AreaVo areaVo);
 	
 	public List viewArea();
+	
+	public List editArea(AreaVo areaVo);
+	
+	
 }

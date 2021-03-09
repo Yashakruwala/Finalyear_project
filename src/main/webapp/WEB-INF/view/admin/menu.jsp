@@ -47,7 +47,7 @@
 				</ul></li>
 
 
-			<li><a href="mailbox.html"> <i class="mdi mdi-email-variant"></i>
+			<li><a href="/logout"> <i class="mdi mdi-email-variant"></i>
 					<span>Logout</span>
 			</a></li>
 

@@ -7,9 +7,9 @@
 		<!-- Logo -->
 		<a href="index.html" class="logo"> <!-- logo--> <span
 			class="logo-lg"> <img
-				src="adminResources/image/logo-light-text.png" alt="logo"
+				src="<%=request.getContextPath() %>/adminResources/image/logo-light-text.png" alt="logo"
 				class="light-logo"> <img
-				src="adminResources/image/logo-dark-text.png" alt="logo"
+				src="<%=request.getContextPath() %>/adminResources/image/logo-dark-text.png" alt="logo"
 				class="dark-logo">
 		</span>
 		</a>
@@ -25,14 +25,14 @@
 				<!-- User Account-->
 				<li class="dropdown user user-menu"><a href="#"
 					class="dropdown-toggle" data-toggle="dropdown"> <img
-						src="adminResources/image/avatar.png" class="img-fluid" alt="" />
+						src="<%=request.getContextPath() %>/adminResources/image/avatar.png" class="img-fluid" alt="" />
 				</a>
 					<ul class="dropdown-menu scale-up">
 						<!-- Menu Body -->
 						<li class="user-body"><a class="dropdown-item"
 							href="javascript:void(0)"><i class="ion ion-person"></i> My
 								Profile</a> 
-								<a class="dropdown-item" href="javascript:void(0)"><i
+								<a class="dropdown-item" href="/logout"><i
 								class="ion-log-out"></i> Logout</a>
 							</li>
 					</ul></li>

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.model.AreaVo;
@@ -41,7 +42,7 @@ public class Areacontroller {
 	}
 	
 	@RequestMapping(value="/savearea", method=RequestMethod.POST)
-	public ModelAndView saveArea(@ModelAttribute AreaVo areaVo)
+	public ModelAndView adminsaveArea(@ModelAttribute AreaVo areaVo)
 	{
 		areaVo.setStatus(true);
 		CityVo cityVo = areaVo.getCityVo();
@@ -52,7 +53,23 @@ public class Areacontroller {
 		
 	}
 	
+	@RequestMapping(value="/editarea", method=RequestMethod.GET)
+	public ModelAndView admineditArea(@ModelAttribute AreaVo areaVo, @RequestParam int id)
+	{
+		areaVo.setId(id);
+		areaVo = (AreaVo)areaService.editArea(areaVo).get(0);
+		List ls = cityService.viewCity();
+		return new ModelAndView("admin/addArea","areaVo",areaVo).addObject("ls", ls);
+	}
 	
-	
+	@RequestMapping(value="/deletearea", method=RequestMethod.GET)
+	public ModelAndView admindeleteArea(@ModelAttribute AreaVo areaVo, @RequestParam int id)
+	{
+		areaVo.setId(id);
+		areaVo=(AreaVo)areaService.editArea(areaVo).get(0);
+		areaVo.setStatus(false);
+		areaService.saveArea(areaVo);
+		return new ModelAndView("redirect:viewarea");
+	}
 	
 }

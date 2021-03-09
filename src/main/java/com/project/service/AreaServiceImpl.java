@@ -30,5 +30,12 @@ public class AreaServiceImpl implements AreaService{
 		return ls;
 		
 	}
+	
+	@Transactional
+	public List editArea(AreaVo areaVo)
+	{
+		List ls = areaDAO.editArea(areaVo);
+		return ls;
+	}
 
 }

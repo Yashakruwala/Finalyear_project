@@ -13,16 +13,16 @@
 <title>AIUI Admin - Dashboard</title>
 
 <!-- Bootstrap 4.0-->
-<link rel="stylesheet" href="adminResources/css/bootstrap.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/adminResources/css/bootstrap.css">
 
 <!-- Bootstrap extend-->
-<link rel="stylesheet" href="adminResources/css/bootstrap-extend.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/adminResources/css/bootstrap-extend.css">
 
 <!-- theme style -->
-<link rel="stylesheet" href="adminResources/css/master_style.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/adminResources/css/master_style.css">
 
 <!-- AIUI Admin skins -->
-<link rel="stylesheet" href="adminResources/css/_all-skins.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/adminResources/css/_all-skins.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -767,40 +767,40 @@
 
 
 	<!-- jQuery 3 -->
-	<script src="adminResources/js/jquery-3.3.1.min.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/jquery-3.3.1.min.js"></script>
 
 	<!-- jQuery UI 1.11.4 -->
-	<script src="adminResources/js/jquery-ui.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/jquery-ui.js"></script>
 
 	<!-- popper -->
-	<script src="adminResources/js/popper.min.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/popper.min.js"></script>
 
 	<!-- Bootstrap 4.0-->
-	<script src="adminResources/js/bootstrap.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/bootstrap.js"></script>
 
 	<!-- Slimscroll -->
-	<script src="adminResources/js/jquery.slimscroll.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/jquery.slimscroll.js"></script>
 
 	<!-- FastClick -->
-	<script src="adminResources/js/fastclick.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/fastclick.js"></script>
 
 	<!-- Sparkline -->
-	<script src="adminResources/js/jquery.sparkline.min.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/jquery.sparkline.min.js"></script>
 
 	<!-- apexcharts -->
-	<script src="adminResources/js/irregular-data-series.js"></script>
-	<script src="adminResources/js/apexcharts.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/irregular-data-series.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/apexcharts.js"></script>
 
 	<!-- FLOT CHARTS -->
-	<script src="adminResources/js/jquery.flot.js"></script>
-	<script src="adminResources/js/jquery.flot.resize.js"></script>
-	<script src="adminResources/js/sampledata1.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/jquery.flot.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/jquery.flot.resize.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/sampledata1.js"></script>
 
 	<!-- AIUI Admin App -->
-	<script src="adminResources/js/template.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/template.js"></script>
 
 	<!-- AIUI Admin dashboard demo (This is only for demo purposes) -->
-	<script src="adminResources/js/dashboard.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/dashboard.js"></script>
 
 </body>
 </html>

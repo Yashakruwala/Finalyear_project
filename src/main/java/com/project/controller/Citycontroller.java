@@ -60,7 +60,7 @@ public class Citycontroller {
 		cityVo=(CityVo)cityService.editCity(cityVo).get(0);
 		cityVo.setStatus(false);
 		cityService.saveCity(cityVo);
-		return new ModelAndView("admin/viewCity");
+		return new ModelAndView("redirect:viewcity");
 	}
 	
 	

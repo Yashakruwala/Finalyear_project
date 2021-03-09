@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+    <%@taglib prefix="x" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,13 +44,13 @@
 					<h3 class="text-center">Get started with Us</h3>
 					<p class="login-box-msg">Sign in to start your session</p>
 
-					<form action="index.jsp" method="post" class="form-element">
+					<form action="/j_spring_security_check" method="post" class="form-element">
 					  <div class="form-group has-feedback">
-						Email<input type="email" class="form-control"  required>
+						Email<input type="email" class="form-control" name="username"  required="required"/>
 						<span class="ion ion-email form-control-feedback"></span>
 					  </div>
 					  <div class="form-group has-feedback">
-						Password<input type="password" class="form-control"  required>
+						Password<input type="password" class="form-control" name="password" required="required"/>
 						<span class="ion ion-locked form-control-feedback"></span>
 					  </div>
 					  <div class="row">

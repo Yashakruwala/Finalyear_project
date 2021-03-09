@@ -89,9 +89,9 @@
 												<td>${i.areaName}</td>
 												<td>${i.cityVo.cityName}</td>
 												<td>${i.areaDescription}</td>
-												<td><a href=""> <i class="mdi mdi-pencil-box"
+												<td><a href="/editarea?id=${i.id}"> <i class="mdi mdi-pencil-box"
 														style="margin-left: 15px; font-size: 20px"></i>
-												</a> <a href=""> <i class="mdi mdi-delete"
+												</a> <a href="/deletearea?id=${i.id}"> <i class="mdi mdi-delete"
 														style="margin-left: 15px; font-size: 20px; color: red"></i>
 												</a></td>
 											</tr>

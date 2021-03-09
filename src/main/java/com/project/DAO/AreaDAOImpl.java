@@ -33,4 +33,15 @@ public class AreaDAOImpl implements AreaDAO{
 		
 		return ls;
 	}
+	
+	public List editArea(AreaVo areaVo)
+	{
+		Session session = this.sessionfactory.getCurrentSession();
+		
+		Query q = session.createQuery("from AreaVo where id="+areaVo.getId());
+		
+		List ls = q.list();
+		
+		return ls;
+	}
 }

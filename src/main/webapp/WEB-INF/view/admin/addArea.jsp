@@ -110,7 +110,7 @@
 														class="form-control"/>
 												</div>
 											</div>
-
+                                              <x:hidden path="id"/>
 											<div class="text-xs-right">
 												<button type="submit" class="btn btn-info">Submit</button>
 											</div>

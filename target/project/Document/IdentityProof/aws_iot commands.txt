@@ -1,0 +1,3 @@
+openssl x509 -in 885aa35529-certificate.pem.crt -out cert.der -outform DER
+openssl rsa -in 885aa35529-private.pem.key -out private.der -outform DER
+openssl x509 -in AmazonRootCA1.pem -out ca.der -outform DER

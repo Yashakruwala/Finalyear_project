@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	
+	<%@taglib prefix="x" uri="http://www.springframework.org/tags/form" %>
+	<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +36,7 @@
 
 </head>
 <body class="hold-transition skin-black light-sidebar sidebar-mini">
+  <x:form action="/saveuser" method="post" modelAttribute="userVo" enctype="Multipart">
 	<div class="wrapper">
 
 
@@ -75,9 +79,9 @@
 															User Name <span class="text-danger">*</span>
 														</h5>
 														<div class="controls">
-															<input type="text" name="text" class="form-control"
-																required
-																data-validation-required-message="This field is required">
+															<x:input path="userName" name="text" class="form-control"
+																required="required"
+																data-validation-required-message="This field is required"/>
 														</div>
 													</div>
 													<div class="form-group">
@@ -85,39 +89,34 @@
 															Phone Number <span class="text-danger">*</span>
 														</h5>
 														<div class="controls">
-															<input type="text" name="minChar" class="form-control"
-																required
+															<x:input path="phoneNumber" name="minChar" class="form-control"
+																required="required"
 																data-validation-required-message="This field is required"
-																minlength="10">
+																minlength="10"/>
 														</div>
 													</div>
 													
+													
 													<div class="form-group">
 														<div class="controls">
-															<select name="select" id="select" required
+															<x:select path="cityVo.id" id="select" required="required"
 																class="form-control">
-																<option disabled="disabled" selected="selected">Select Your City</option>
-																<option value="1">Ahmedabad</option>
-																<option value="2">Surat</option>
-																<option value="3">Gandhinagar</option>
-																<option value="4">Surat</option>
-																<option value="5">Mehsana</option>
-															</select>
+																<c:forEach items="${ls}" var = "i">
+																<option value="${i.id}">${i.cityName}</option>
+																</c:forEach>
+															</x:select>
 														</div>
 														
 													</div>
 													
 													<div class="form-group">
 														<div class="controls">
-															<select name="select" id="select" required
+															<x:select path="areaVo.id" id="select" required="required"
 																class="form-control">
-																<option disabled="disabled" selected="selected">Select Your Area </option>
-																<option value="1">Ahmedabad</option>
-																<option value="2">Surat</option>
-																<option value="3">Gandhinagar</option>
-																<option value="4">Surat</option>
-																<option value="5">Mehsana</option>
-															</select>
+																<c:forEach items="${ls1}" var="j">
+																  <option value="${j.id}">${j.areaName}</option>
+																</c:forEach>
+															</x:select>
 														</div>
 														
 													</div>
@@ -127,8 +126,8 @@
 													Address <span class="text-danger">*</span>
 												</h5>
 												<div class="controls">
-													<textarea rows="3" name="cust_add" id="textarea"
-														class="form-control" required ></textarea>
+													<x:textarea rows="3" path="address" id="textarea"
+														class="form-control" required="required" />
 												</div>
 											</div>
 													
@@ -137,12 +136,23 @@
 															 Email Address <span class="text-danger">*</span>
 														</h5>
 														<div class="controls">
-															<input type="text" class="form-control"
+															<x:input path="email" class="form-control"
 																
 																data-validation-regex-regex="([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})"
-																data-validation-regex-message="Enter Valid Email">
+																data-validation-regex-message="Enter Valid Email"/>
+														</div>
+													</div><div class="form-group">
+														<h5>
+															Password <span class="text-danger">*</span>
+														</h5>
+														<div class="controls">
+															<x:input path="password" name="text" class="form-control"
+																required="required"
+																data-validation-required-message="This field is required"
+																minlength="15"/>
 														</div>
 													</div>
+													
 													<div class="form-group">
 														<h5>
 															Id Proof <span class="text-danger">*</span>
@@ -229,6 +239,6 @@
 					.jqBootstrapValidation();
 		}(window, document, jQuery);
 	</script>
-
+</x:form>
 </body>
 </html>

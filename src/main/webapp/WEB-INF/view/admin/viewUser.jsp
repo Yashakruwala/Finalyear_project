@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,18 +87,20 @@
 											</tr>
 										</thead>
 										<tbody>
+										<c:forEach items="${ls}" var="i">
 											<tr>
-											    <td>1</td>
-												<td>Dhruvi Modi</td>
-												<td>12345</td>
-												<td>Khadia</td>
-												<td>Khadia</td>
-												<td>Khadia</td>
-												<td>druvi.modi1234@gmail.com</td>
-												<td> <a href=""> View </a>  </td>
+											    <td>${i.id}</td>
+												<td>${i.userName}</td>
+												<td>${i.phoneNumber}</td>
+												<td>${i.cityVo.cityName}</td>
+												<td>${i.areaVo.areaName}</td>
+												<td>${i.address}</td>
+												<td>${i.email}</td>
+												<td> <a href="<%request.getContextPath();%>/Document/IdentityProof/${i.userFilename}" target="_tab">${i.userFilename}</a></td>
 												<td><a href="manageDevice.jsp"><div class="col-sm-6 col-md-4 col-lg-3"> <i class="ti-pencil-alt"></i>Manage Device</div>
 												</td>
 											</tr>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>

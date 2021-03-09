@@ -9,4 +9,6 @@ public interface AreaDAO {
 	public void saveArea(AreaVo areaVo);
 	
 	public List viewArea();
+	
+	public List editArea(AreaVo areaVo);
 }
