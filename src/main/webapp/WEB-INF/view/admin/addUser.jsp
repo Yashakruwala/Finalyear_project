@@ -36,7 +36,7 @@
 
 </head>
 <body class="hold-transition skin-black light-sidebar sidebar-mini">
-  <x:form action="/saveuser" method="post" modelAttribute="userVo" enctype="multipart/form-data">
+  <x:form action="saveuser" method="post" modelAttribute="userVo" enctype="multipart/form-data">
 	<div class="wrapper">
 
 

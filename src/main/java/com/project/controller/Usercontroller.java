@@ -81,7 +81,7 @@ public class Usercontroller {
 		LoginVO loginVo = new LoginVO();
 
 		String username = userVo.getUserName();
-		/* System.out.println(username); */
+		 System.out.println(username); 
 		String password = userVo.getPassword();
 		loginVo.setUsername(username);
 		loginVo.setPassword(password);
@@ -92,6 +92,8 @@ public class Usercontroller {
 		userService.saveUserforLogin(loginVo);
 		userService.saveUser(userVo);
 		List ls = userService.viewUser();
+		String uname=userVo.getUserName();
+		System.out.println(uname);
 		return new ModelAndView("admin/viewUser", "ls", ls);
 
 	}

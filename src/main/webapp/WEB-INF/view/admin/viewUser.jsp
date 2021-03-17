@@ -10,6 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon" href="<%=request.getContextPath() %>/adminResources/image/favicon.ico">
+<script src = "<%=request.getContextPath() %>/adminResources/js/jquery.js"></script>
 
 <title>Power Consumption Monitoring</title>
 
@@ -28,6 +29,7 @@
 
 <!-- AIUI Admin skins -->
 <link rel="stylesheet" href="<%=request.getContextPath() %>/adminResources/css/_all-skins.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/adminResources/css/imgpreview.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,7 +37,9 @@
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+<script src = "<%=request.getContextPath() %>/adminResources/js/jquery.js"></script>
 
+<script></script>
 </head>
 
 <body class="hold-transition skin-black light-sidebar sidebar-mini">
@@ -94,13 +98,22 @@
 												<td>${i.cityVo.cityName}</td>
 												<td>${i.areaVo.areaName}</td>
 												<td>${i.address}</td>
-												<td> <a href="<%request.getContextPath();%>/Document/IdentityProof/${i.fileName}" target="_tab">${i.fileName}</a></td>
-												<td><a href="managedevice?id=${i.id}"><div class="col-sm-6 col-md-4 col-lg-3"> <abbr title="------------"><i class="ti-pencil-alt"></i></abbr></div>
+												<td> <img id="myImg" src="<%request.getContextPath();%>/Document/IdentityProof/${i.fileName}" class="image" alt="Identity Proof" target="_blank"></td>
+												<td><a href="managedevice?id=${i.id}"><div class="col-sm-6 col-md-4 col-lg-3"> <abbr title=""><i class="ti-pencil-alt"></i></abbr></div>
 												</td>
 											</tr>
 											</c:forEach>
 										</tbody>
 									</table>
+									
+									<div id="myModal" class ="modal">
+									<span class="close">&times;</span>
+  															
+  									<img class="modal-content" id="img01">
+  
+ 									 <div id="caption"></div>
+									
+									</div>
 								</div>
 							</div>
 							<!-- /.box-body -->
@@ -149,6 +162,7 @@
 
 	<!-- AIUI Admin for Data Table -->
 	<script src="<%=request.getContextPath() %>/adminResources/js/data-table.js"></script>
+<script src="<%=request.getContextPath() %>/adminResources/js/imagepreview.js"></script>
 
 
 </body>
