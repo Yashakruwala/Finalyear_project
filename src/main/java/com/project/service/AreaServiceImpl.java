@@ -15,7 +15,7 @@ import com.project.model.AreaVo;
 public class AreaServiceImpl implements AreaService{
 	
 	@Autowired
-	AreaDAO areaDAO;
+	private AreaDAO areaDAO;
 	
 	@Transactional
 	public void saveArea(AreaVo areaVo)

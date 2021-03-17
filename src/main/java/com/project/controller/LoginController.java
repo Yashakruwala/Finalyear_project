@@ -21,7 +21,7 @@ public class LoginController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView loadLogin() {
 
-		return new ModelAndView("admin/login");
+		return new ModelAndView("login");
 	}
 
 	
@@ -48,18 +48,24 @@ public class LoginController {
 	            request.getSession().setAttribute("tempStatus", "success");
 	            request.getSession().setAttribute("statusText", "Logout Successfully!");
 	}
-	        return "admin/login";
+	        return "login";
 	        }
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView load() {
 
-		return new ModelAndView("admin/login");
+		return new ModelAndView("login");
 	}
 	
 	@RequestMapping(value = "/403", method = RequestMethod.GET)
 	public ModelAndView load403() {
 
-		return new ModelAndView("admin/login");
+		return new ModelAndView("login");
+	}
+	
+	@RequestMapping(value="/error", method= RequestMethod.GET)
+	public ModelAndView loaderror()
+	{
+		return new ModelAndView("login");
 	}
 	
 }

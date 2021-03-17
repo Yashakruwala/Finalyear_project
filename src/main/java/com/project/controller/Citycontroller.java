@@ -21,22 +21,22 @@ import com.project.service.CityService;
 public class Citycontroller {
 
 	@Autowired
-	CityService cityService;
+	private CityService cityService;
 	
-	@RequestMapping(value="/addcity")
+	@RequestMapping(value="admin/addcity")
 	public ModelAndView adminaddCity()
 	{
 		return new ModelAndView("admin/addCity","cityVo",new CityVo());
 	}
 	
-	@GetMapping("/viewcity")
+	@GetMapping("admin/viewcity")
 	public ModelAndView adminviewCity()
 	{
 		List ls = cityService.viewCity();
 		return new ModelAndView("admin/viewCity","ls",ls);
 	}
 	
-	@RequestMapping(value="/saveCity", method=RequestMethod.POST)
+	@RequestMapping(value="admin/saveCity", method=RequestMethod.POST)
 	public ModelAndView saveCity(@ModelAttribute CityVo cityVo)
 	{
 		cityVo.setStatus(true);
@@ -45,7 +45,7 @@ public class Citycontroller {
 		return new ModelAndView("admin/viewCity","ls",ls);
 	}
 	
-	@RequestMapping(value="/editCity", method=RequestMethod.GET)
+	@RequestMapping(value="admin/editCity", method=RequestMethod.GET)
 	public ModelAndView editCity(@ModelAttribute CityVo cityVo,@RequestParam int id)
 	{
 		cityVo.setId(id);
@@ -53,7 +53,7 @@ public class Citycontroller {
 		return new ModelAndView("admin/addCity","cityVo",cityVo);
 	}
 	
-	@RequestMapping(value="/deletecity", method=RequestMethod.GET)
+	@RequestMapping(value="admin/deletecity", method=RequestMethod.GET)
 	public ModelAndView deleteCity(@ModelAttribute CityVo cityVo,@RequestParam int id)
 	{
 		cityVo.setId(id);

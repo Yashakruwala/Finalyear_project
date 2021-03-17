@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix="x" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,21 +9,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="adminResources/image/favicon.ico">
+<link rel="icon" href="<%=request.getContextPath()%>/adminResources/image/favicon.ico">
 
 <title>Manage Device</title>
 
 <!-- Bootstrap 4.0-->
-<link rel="stylesheet" href="adminResources/css/bootstrap.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/adminResources/css/bootstrap.min.css">
 
 <!-- Bootstrap extend-->
-<link rel="stylesheet" href="adminResources/css/bootstrap-extend.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/adminResources/css/bootstrap-extend.css">
 
 <!-- Theme style -->
-<link rel="stylesheet" href="adminResources/css/master_style.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/adminResources/css/master_style.css">
 
 <!-- AIUI Admin skins -->
-<link rel="stylesheet" href="adminResources/css/_all-skins.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/adminResources/css/_all-skins.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +34,10 @@
 
 </head>
 <body class="hold-transition skin-black light-sidebar sidebar-mini">
+	<x:form action="addDevice" method="post" modelAttribute="deviceVo">
+	
 	<div class="wrapper">
+	
 
 
 		<jsp:include page="header.jsp"></jsp:include>
@@ -70,38 +74,39 @@
 										<form novalidate>
 											<div class="row">
 												<div class="col-12">
+												<div class="form-group">
+														<h5>
+															Service number  <span class="text-danger"></span>
+														</h5>
+														<div class="controls">
+															<input type="text" name="serviceNumber" value="${userVo.id}" class="form-control"
+							
+																data-validation-required-message="This field is required" readonly>
+														</div>
+													</div>
 													<div class="form-group">
 														<h5>
 															Device Name  <span class="text-danger">*</span>
 														</h5>
 														<div class="controls">
-															<input type="text" name="text" class="form-control"
-																required
-																data-validation-required-message="This field is required">
+															<x:input path="deviceName"  name="text" class="form-control"
+																required="required"
+																data-validation-required-message="This field is required"/>
 														</div>
 													</div>
 													
 													<div class="form-group">
 														<h5>
-															Device Id  <span class="text-danger">*</span>
+															Device Description  <span class="text-danger">*</span>
 														</h5>
 														<div class="controls">
-															<input type="text" name="text" class="form-control" width=100%
-																required
-																data-validation-required-message="This field is required">
+															<x:input path="deviceDescription" name="text" class="form-control" 
+																required="required"
+																data-validation-required-message="This field is required"/>
 														</div>
 													</div>
 													
-													<div class="form-group">
-														<h5>
-															Service number  <span class="text-danger">*</span>
-														</h5>
-														<div class="controls">
-															<input type="text" name="text" class="form-control"
-																required
-																data-validation-required-message="This field is required">
-														</div>
-													</div>
+													
 													
 													
 													<div class="text-xs-right">
@@ -143,28 +148,28 @@
 	<!-- ./wrapper -->
 
 	<!-- jQuery 3 -->
-	<script src="adminResources/js/jquery-3.3.1.min.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/jquery-3.3.1.min.js"></script>
 
 	<!-- popper -->
-	<script src="adminResources/js/popper.min.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/popper.min.js"></script>
 
 	<!-- Bootstrap 4.0-->
-	<script src="adminResources/js/bootstrap.min.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/bootstrap.min.js"></script>
 
 	<!-- SlimScroll -->
-	<script src="adminResources/js/jquery.slimscroll.min.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/jquery.slimscroll.min.js"></script>
 
 	<!-- FastClick -->
-	<script src="adminResources/js/fastclick.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/fastclick.js"></script>
 
 	<!-- Sparkline -->
-	<script src="adminResources/js/jquery.sparkline.min.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/jquery.sparkline.min.js"></script>
 
 	<!-- AIUI Admin App -->
-	<script src="adminResources/js/template.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/template.js"></script>
 
 	<!-- Form validator JavaScript -->
-	<script src="adminResources/js/validation.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/validation.js"></script>
 	<script>
 		!function(window, document, $) {
 			"use strict";
@@ -172,6 +177,6 @@
 					.jqBootstrapValidation();
 		}(window, document, jQuery);
 	</script>
-
+ </x:form>
 </body>
 </html>

@@ -14,7 +14,7 @@ import com.project.model.CityVo;
 public class CityServiceImpl implements CityService {
 	
 	@Autowired
-	CityDAO cityDAO;
+	private CityDAO cityDAO;
 
 	@Transactional
 	public void saveCity(CityVo cityVo)

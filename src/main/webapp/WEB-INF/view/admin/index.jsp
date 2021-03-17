@@ -10,7 +10,7 @@
 <meta name="author" content="">
 <link rel="icon" href="adminResources/image/favicon.ico">
 
-<title>AIUI Admin - Dashboard</title>
+<title>Power Consumption Monitoring</title>
 
 <!-- Bootstrap 4.0-->
 <link rel="stylesheet" href="<%=request.getContextPath() %>/adminResources/css/bootstrap.css">

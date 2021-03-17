@@ -9,25 +9,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="adminResources/image/favicon.ico">
+<link rel="icon" href="<%=request.getContextPath() %>/adminResources/image/favicon.ico">
 
-<title>AIUI Admin - Dashboard Data Tables</title>
+<title>Power Consumption Monitoring</title>
 
 <!-- Bootstrap 4.0-->
-<link rel="stylesheet" href="adminResources/css/bootstrap.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/adminResources/css/bootstrap.min.css">
 
 <!-- Data Table-->
 <link rel="stylesheet" type="text/css"
-	href="adminResources/css/datatables.min.css" />
+	href="<%=request.getContextPath() %>/adminResources/css/datatables.min.css" />
 
 <!-- Bootstrap extend-->
-<link rel="stylesheet" href="adminResources/css/bootstrap-extend.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/adminResources/css/bootstrap-extend.css">
 
 <!-- Theme style -->
-<link rel="stylesheet" href="adminResources/css/master_style.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/adminResources/css/master_style.css">
 
 <!-- AIUI Admin skins -->
-<link rel="stylesheet" href="adminResources/css/_all-skins.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/adminResources/css/_all-skins.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -58,7 +58,7 @@
 			<div class="content-header d-none d-md-block">
 				<div class="d-flex align-items-center">
 					<div class="mr-auto">
-						<h3 class="page-title br-0">View User</h3>
+						<h3 class="page-title br-0">User Details</h3>
 					</div>
 				</div>
 			</div>
@@ -81,23 +81,21 @@
 												<th>City</th>
 												<th>Area</th>
 												<th>Address</th>
-												<th>Email</th>
 												<th>Id Proof </th>
 												<th>Manage Device</th>
 											</tr>
 										</thead>
 										<tbody>
-										<c:forEach items="${ls}" var="i">
+										<c:forEach items="${ls}" var="i" varStatus="j">
 											<tr>
-											    <td>${i.id}</td>
+											    <td>${j.count}</td>
 												<td>${i.userName}</td>
 												<td>${i.phoneNumber}</td>
 												<td>${i.cityVo.cityName}</td>
 												<td>${i.areaVo.areaName}</td>
 												<td>${i.address}</td>
-												<td>${i.email}</td>
-												<td> <a href="<%request.getContextPath();%>/Document/IdentityProof/${i.userFilename}" target="_tab">${i.userFilename}</a></td>
-												<td><a href="manageDevice.jsp"><div class="col-sm-6 col-md-4 col-lg-3"> <i class="ti-pencil-alt"></i>Manage Device</div>
+												<td> <a href="<%request.getContextPath();%>/Document/IdentityProof/${i.fileName}" target="_tab">${i.fileName}</a></td>
+												<td><a href="managedevice?id=${i.id}"><div class="col-sm-6 col-md-4 col-lg-3"> <abbr title="------------"><i class="ti-pencil-alt"></i></abbr></div>
 												</td>
 											</tr>
 											</c:forEach>
@@ -126,31 +124,31 @@
 	<!-- ./wrapper -->
 
 	<!-- jQuery 3 -->
-	<script src="adminResources/js/jquery-3.3.1.min.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/jquery-3.3.1.min.js"></script>
 
 	<!-- popper -->
-	<script src="adminResources/js/popper.min.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/popper.min.js"></script>
 
 	<!-- Bootstrap 4.0-->
-	<script src="adminResources/js/bootstrap.min.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/bootstrap.min.js"></script>
 
 	<!-- SlimScroll -->
-	<script src="adminResources/js/jquery.slimscroll.min.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/jquery.slimscroll.min.js"></script>
 
 	<!-- FastClick -->
-	<script src="adminResources/js/fastclick.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/fastclick.js"></script>
 
 	<!-- Sparkline -->
-	<script src="adminResources/js/jquery.sparkline.min.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/jquery.sparkline.min.js"></script>
 
 	<!-- AIUI Admin App -->
-	<script src="adminResources/js/template.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/template.js"></script>
 
 	<!-- This is data table -->
-	<script src="adminResources/js/datatables.min.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/datatables.min.js"></script>
 
 	<!-- AIUI Admin for Data Table -->
-	<script src="adminResources/js/data-table.js"></script>
+	<script src="<%=request.getContextPath() %>/adminResources/js/data-table.js"></script>
 
 
 </body>

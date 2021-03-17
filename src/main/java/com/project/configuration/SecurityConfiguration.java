@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.InMemoryTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
@@ -17,9 +18,9 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
-/*    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
-*/
+   /* @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;*/
+
     @Autowired
 	CustomizeAuthenticationSuccessHandler customizeAuthenticationSuccessHandler;
  
@@ -42,7 +43,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
                 .usersByUsernameQuery(usersQuery)
                 .authoritiesByUsernameQuery(rolesQuery)
                 .dataSource(dataSource);
-               // .passwordEncoder(bCryptPasswordEncoder);
+               /* .passwordEncoder(bCryptPasswordEncoder);*/
     }
     
     @Override
@@ -55,7 +56,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
  
         // /userInfo page requires login as ROLE_USER or ROLE_ADMIN.
         // If no login, it will redirect to /login page.
-        http.authorizeRequests().antMatchers("/user/**").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
+        http.authorizeRequests().antMatchers("/user/**").access("hasRole('ROLE_USER')");
  
         // For ADMIN only.
         http.authorizeRequests().antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')");

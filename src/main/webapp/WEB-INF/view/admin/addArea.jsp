@@ -10,21 +10,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="adminResources/image/favicon.ico">
+<link rel="icon" href="<%=request.getContextPath()%>/adminResources/image/favicon.ico">
 
-<title>AIUI Admin - Dashboard Form Validation</title>
+<title>Power Consumption Monitoring</title>
 
 <!-- Bootstrap 4.0-->
-<link rel="stylesheet" href="adminResources/css/bootstrap.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/adminResources/css/bootstrap.min.css">
 
 <!-- Bootstrap extend-->
-<link rel="stylesheet" href="adminResources/css/bootstrap-extend.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/adminResources/css/bootstrap-extend.css">
 
 <!-- Theme style -->
-<link rel="stylesheet" href="adminResources/css/master_style.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/adminResources/css/master_style.css">
 
 <!-- AIUI Admin skins -->
-<link rel="stylesheet" href="adminResources/css/_all-skins.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/adminResources/css/_all-skins.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,7 +76,7 @@
 													
 													<div class="form-group">
 													 <h5>
-															City <span class="text-danger">*</span>
+															City Name <span class="text-danger">*</span>
 														</h5>
 													 
 														<div class="controls">
@@ -103,7 +103,7 @@
 											</div>
 											<div class="form-group">
 												<h5>
-													Area Des. <span class="text-danger">*</span>
+													Area Description <span class="text-danger">*</span>
 												</h5>
 												<div class="controls">
 													<x:textarea rows="10" path="areaDescription" id="textarea"
@@ -165,7 +165,7 @@
 					<div class="media-list media-list-hover mt-20">
 						<div class="media py-10 px-0">
 							<a class="avatar avatar-lg status-success" href="#"> <img
-								src="adminResources/image/1.jpg" alt="...">
+								src="<%=request.getContextPath()%>/adminResources/image/1.jpg" alt="...">
 							</a>
 							<div class="media-body">
 								<p class="font-size-16">
@@ -178,7 +178,7 @@
 
 						<div class="media py-10 px-0">
 							<a class="avatar avatar-lg status-danger" href="#"> <img
-								src="adminResources/image/2.jpg" alt="...">
+								src="<%=request.getContextPath()%>/adminResources/image/2.jpg" alt="...">
 							</a>
 							<div class="media-body">
 								<p class="font-size-16">
@@ -191,7 +191,7 @@
 
 						<div class="media py-10 px-0">
 							<a class="avatar avatar-lg status-warning" href="#"> <img
-								src="adminResources/image/3.jpg" alt="...">
+								src="<%=request.getContextPath()%>/adminResources/image/3.jpg" alt="...">
 							</a>
 							<div class="media-body">
 								<p class="font-size-16">
@@ -204,7 +204,7 @@
 
 						<div class="media py-10 px-0">
 							<a class="avatar avatar-lg status-primary" href="#"> <img
-								src="adminResources/image/4.jpg" alt="...">
+								src="<%=request.getContextPath()%>/adminResources/image/4.jpg" alt="...">
 							</a>
 							<div class="media-body">
 								<p class="font-size-16">
@@ -217,7 +217,7 @@
 
 						<div class="media py-10 px-0">
 							<a class="avatar avatar-lg status-success" href="#"> <img
-								src="adminResources/image/1.jpg" alt="...">
+								src="<%=request.getContextPath()%>/adminResources/image/1.jpg" alt="...">
 							</a>
 							<div class="media-body">
 								<p class="font-size-16">
@@ -230,7 +230,7 @@
 
 						<div class="media py-10 px-0">
 							<a class="avatar avatar-lg status-danger" href="#"> <img
-								src="adminResources/image/2.jpg" alt="...">
+								src="<%=request.getContextPath()%>/adminResources/image/2.jpg" alt="...">
 							</a>
 							<div class="media-body">
 								<p class="font-size-16">
@@ -243,7 +243,7 @@
 
 						<div class="media py-10 px-0">
 							<a class="avatar avatar-lg status-warning" href="#"> <img
-								src="adminResources/image/3.jpg" alt="...">
+								src="<%=request.getContextPath()%>/adminResources/image/3.jpg" alt="...">
 							</a>
 							<div class="media-body">
 								<p class="font-size-16">
@@ -256,7 +256,7 @@
 
 						<div class="media py-10 px-0">
 							<a class="avatar avatar-lg status-primary" href="#"> <img
-								src="adminResources/image/4.jpg" alt="...">
+								src="<%=request.getContextPath()%>/adminResources/image/4.jpg" alt="...">
 							</a>
 							<div class="media-body">
 								<p class="font-size-16">
@@ -393,28 +393,28 @@
 	<!-- ./wrapper -->
 
 	<!-- jQuery 3 -->
-	<script src="adminResources/js/jquery-3.3.1.min.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/jquery-3.3.1.min.js"></script>
 
 	<!-- popper -->
-	<script src="adminResources/js/popper.min.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/popper.min.js"></script>
 
 	<!-- Bootstrap 4.0-->
-	<script src="adminResources/js/bootstrap.min.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/bootstrap.min.js"></script>
 
 	<!-- SlimScroll -->
-	<script src="adminResources/js/jquery.slimscroll.min.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/jquery.slimscroll.min.js"></script>
 
 	<!-- FastClick -->
-	<script src="adminResources/js/fastclick.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/fastclick.js"></script>
 
 	<!-- Sparkline -->
-	<script src="adminResources/js/jquery.sparkline.min.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/jquery.sparkline.min.js"></script>
 
 	<!-- AIUI Admin App -->
-	<script src="adminResources/js/template.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/template.js"></script>
 
 	<!-- Form validator JavaScript -->
-	<script src="adminResources/js/validation.js"></script>
+	<script src="<%=request.getContextPath()%>/adminResources/js/validation.js"></script>
 	<script>
 		!function(window, document, $) {
 			"use strict";

@@ -1,0 +1,10 @@
+git init
+git add .
+git commit -m ""
+Branch:
+	git branch <name>
+	git checkout <name>
+	git checkout -b <name> //Create & switch to new branch 
+git push origin master
+git clone url
+git pull origin <remote branch name> 

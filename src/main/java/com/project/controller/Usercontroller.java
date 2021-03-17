@@ -29,67 +29,70 @@ import com.project.service.UserService;
 public class Usercontroller {
 
 	@Autowired
-	CityService cityService;
-	
+	private CityService cityService;
+
 	@Autowired
-	AreaService areaService;
-	
+	private AreaService areaService;
+
 	@Autowired
-	UserService userService;
-	
-	
-	@GetMapping("/adduser")
-	public ModelAndView adminaddUser()
-	{
+	private UserService userService;
+
+	@GetMapping("admin/adduser")
+	public ModelAndView adminaddUser() {
 		List ls = cityService.viewCity();
-		
+
 		List ls1 = areaService.viewArea();
-		
-		return new ModelAndView("admin/addUser","userVo",new UserVo()).addObject("ls", ls).addObject("ls1",ls1);
+
+		return new ModelAndView("admin/addUser", "userVo", new UserVo()).addObject("ls", ls).addObject("ls1", ls1);
 	}
-	
-	@GetMapping("/viewuser")
-	public ModelAndView adminviewUser()
-	{
-		List ls = userService.viewUser(); 
-		return new ModelAndView("admin/viewUser","ls",ls);
+
+	@GetMapping("admin/viewuser")
+	public ModelAndView adminviewUser() {
+		List ls = userService.viewUser();
+		return new ModelAndView("admin/viewUser", "ls", ls);
 	}
-	
-	@RequestMapping(value="/saveuser", method=RequestMethod.POST)
-	public ModelAndView saveUser(@ModelAttribute UserVo userVo, @RequestParam("file") MultipartFile file,HttpServletRequest request)
-	{
-		String fileName=file.getOriginalFilename();
-		String str=request.getSession().getServletContext().getRealPath("/");
-		String filePath=str+"Document\\IdentityProof\\";
-		
-       try{
-			
-			byte br[]=file.getBytes();
-			BufferedOutputStream bout=new BufferedOutputStream(new FileOutputStream(filePath + "\\" +fileName));
+
+	@RequestMapping(value = "admin/saveuser", method = RequestMethod.POST)
+	public ModelAndView saveUser(@ModelAttribute UserVo userVo, @RequestParam("file") MultipartFile file,
+			HttpServletRequest request) {
+		String fileName = file.getOriginalFilename();
+		String str = request.getSession().getServletContext().getRealPath("/");
+		String filePath = str + "Document\\IdentityProof\\";
+
+		try {
+
+			byte br[] = file.getBytes();
+			BufferedOutputStream bout = new BufferedOutputStream(new FileOutputStream(filePath + "\\" + fileName));
 			bout.write(br);
 			bout.flush();
 			bout.close();
-			
-		}
-		catch(Exception e)
-		{
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-       
-        userVo.setUserFilename(fileName);
-		
-        userVo.setUserFilePath(filePath);
-        
-		userVo.setStatus(true);
-		
+
+		userVo.setFileName(fileName);
+
+		userVo.setFilePath(filePath);
+
 		CityVo cityVo = userVo.getCityVo();
 		AreaVo areaVo = userVo.getAreaVo();
-		
+		/*LoginVO loginVO = userVo.getLoginVO();*/
+		LoginVO loginVo = new LoginVO();
+
+		String username = userVo.getUserName();
+		/* System.out.println(username); */
+		String password = userVo.getPassword();
+		loginVo.setUsername(username);
+		loginVo.setPassword(password);
+		userVo.setLoginVO(loginVo);
 		userVo.setCityVo(cityVo);
 		userVo.setAreaVo(areaVo);
+
+		userService.saveUserforLogin(loginVo);
 		userService.saveUser(userVo);
 		List ls = userService.viewUser();
-		return new ModelAndView("admin/viewUser","ls",ls);
-		
+		return new ModelAndView("admin/viewUser", "ls", ls);
+
 	}
 }

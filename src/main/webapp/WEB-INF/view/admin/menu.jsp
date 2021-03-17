@@ -16,9 +16,9 @@
 				</span>
 			</a>
 				<ul class="treeview-menu">
-					<li><a href="/adduser"><i
+					<li><a href="adduser"><i
 							class="mdi mdi-resize-bottom-right"></i>Add User</a></li>
-					<li><a href="/viewuser"><i
+					<li><a href="viewuser"><i
 							class="mdi mdi-resize-bottom-right"></i>View User</a></li>
 				</ul></li>
 
@@ -28,9 +28,9 @@
 				</span>
 			</a>
 				<ul class="treeview-menu">
-					<li><a href="/addcity"><i
+					<li><a href="addcity"><i
 							class="mdi mdi-resize-bottom-right"></i>Add City</a></li>
-					<li><a href="/viewcity"><i
+					<li><a href="viewcity"><i
 							class="mdi mdi-resize-bottom-right"></i>View City</a></li>
 				</ul></li>
 
@@ -40,9 +40,9 @@
 				</span>
 			</a>
 				<ul class="treeview-menu">
-					<li><a href="/addarea"><i
+					<li><a href="addarea"><i
 							class="mdi mdi-resize-bottom-right"></i>Add Area</a></li>
-					<li><a href="/viewarea"><i
+					<li><a href="viewarea"><i
 							class="mdi mdi-resize-bottom-right"></i>View Area</a></li>
 				</ul></li>
 

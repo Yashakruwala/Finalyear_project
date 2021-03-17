@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.project.model.LoginVO;
 import com.project.model.UserVo;
 
 @Repository
@@ -27,11 +28,29 @@ public class UserDAOImpl implements UserDAO{
 	{
 		Session session = this.sessionfactory .getCurrentSession();
 		
-		Query q = session.createQuery("from UserVo where status = true ");
+		Query q = session.createQuery("from UserVo");
 		
 		List ls = q.list();
 		
 		return ls;
 		
+	}
+	
+	public void saveUserforLogin(LoginVO loginVO)
+	{
+		Session session = this.sessionfactory.getCurrentSession();
+		
+		session.saveOrUpdate(loginVO);
+	}
+	
+	public List editUser(UserVo userVo)
+	{
+		Session session = this.sessionfactory.getCurrentSession();
+		
+		Query q = session.createQuery("from UserVo where id="+userVo.getId());
+		
+		List ls = q.list();
+		
+		return ls;
 	}
 }
