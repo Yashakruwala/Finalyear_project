@@ -1,5 +1,7 @@
 package com.project.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,13 @@ public class DeviceServiceImpl implements DeviceService{
 	public void saveDevice(DeviceVo deviceVo)
 	{
 		deviceDAO.saveDevice(deviceVo);
+	}
+	
+	@Transactional
+	public List deviceSearch(DeviceVo deviceVo)
+	{
+		List ls = deviceDAO.deviceSearch(deviceVo);
+		return ls;
 	}
 
 }

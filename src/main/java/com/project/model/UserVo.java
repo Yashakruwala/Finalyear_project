@@ -11,44 +11,45 @@ import javax.transaction.Transactional;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="user_table")
+@Table(name = "user_table")
 public class UserVo {
-	
+
 	@Id
-	@Column(name="id")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
-	@Column(name="username")
+
+	@Column(name = "username")
 	private String userName;
-	
-	@Column(name="phone_number")
+
+	@Column(name = "phone_number")
 	private String phoneNumber;
- 
-	
-	@Column(name="password")
+
+	@Column(name = "meterNumber")
+	private String meterNumber;
+
+	@Column(name = "password")
 	private String password;
-	
-	@Column(name="address")
-	@Size(max=500)
+
+	@Column(name = "address")
+	@Size(max = 500)
 	private String address;
-	
-	@Column(name="filename")
+
+	@Column(name = "filename")
 	private String fileName;
-	
-	@Column(name="filepath")
+
+	@Column(name = "filepath")
 	private String filePath;
-	
+
 	@ManyToOne
 	AreaVo areaVo;
-	
+
 	@ManyToOne
 	CityVo cityVo;
-	
+
 	@ManyToOne
 	LoginVO loginVO;
-	
-	
+
 	public LoginVO getLoginVO() {
 		return loginVO;
 	}
@@ -80,8 +81,6 @@ public class UserVo {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-
-	
 
 	public String getPassword() {
 		return password;
@@ -131,9 +130,12 @@ public class UserVo {
 		this.cityVo = cityVo;
 	}
 
-	
-	
-	
-	
+	public String getMeterNumber() {
+		return meterNumber;
+	}
+
+	public void setMeterNumber(String meterNumber) {
+		this.meterNumber = meterNumber;
+	}
 
 }

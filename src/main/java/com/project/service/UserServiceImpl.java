@@ -12,33 +12,43 @@ import com.project.model.LoginVO;
 import com.project.model.UserVo;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserDAO userDAO;
-	
+
 	@Transactional
-	public void saveUser(UserVo userVo)
-	{
+	public void saveUser(UserVo userVo) {
 		userDAO.saveUser(userVo);
 	}
-	
+
 	@Transactional
-	public List viewUser()
-	{
+	public List viewUser() {
 		List ls = userDAO.viewUser();
 		return ls;
 	}
+
 	@Transactional
-	public void saveUserforLogin(LoginVO loginVO)
-	{
+	public void saveUserforLogin(LoginVO loginVO) {
 		userDAO.saveUserforLogin(loginVO);
 	}
-	
+
 	@Transactional
-	public List editUser(UserVo userVo)
-	{
+	public List editUser(UserVo userVo) {
 		List ls = userDAO.editUser(userVo);
 		return ls;
 	}
+
+	@Transactional
+	public List getUserByLogin(int loginId) {
+		List ls = userDAO.getUserByLogin(loginId);
+		return ls;
+	}
+
+	@Transactional
+	public List getBillByMeterNumber(String meterNumber) {
+		// TODO Auto-generated method stub
+		return this.userDAO.getBillByMeterNumber(meterNumber);
+	}
+
 }

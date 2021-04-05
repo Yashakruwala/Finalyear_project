@@ -23,6 +23,16 @@ public class DeviceDAOImpl implements DeviceDAO {
 		session.saveOrUpdate(deviceVo);
 	}
 	
+	public List deviceSearch(DeviceVo deviceVo)
+	{
+		Session session = this.sessionfactory.getCurrentSession();
+		
+		Query q = session.createQuery("from DeviceVo where userVo="+deviceVo.getUserVo().getId());
+		
+		List ls = q.list();
+		
+		return ls;
+	}
 	
 	
 	

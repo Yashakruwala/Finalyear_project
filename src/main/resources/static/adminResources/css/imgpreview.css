@@ -19,7 +19,7 @@
         }
 
         /* The Modal (background) */
-        .modal {
+        .mymodal {
             display: none;
             /* Hidden by default */
             position: fixed;
@@ -43,7 +43,7 @@
         }
 
         /* Modal Content (image) */
-        .modal-content {
+        .mymodal-content {
             margin: auto;
             display: block;
             width: 80%;
@@ -64,7 +64,7 @@
         }
 
         /* Add Animation */
-        .modal-content,
+        .mymodal-content,
         #caption {
             -webkit-animation-name: zoom;
             -webkit-animation-duration: 0.6s;
@@ -113,7 +113,7 @@
 
         /* 100% Image Width on Smaller Screens */
         @media only screen and (max-width: 700px) {
-            .modal-content {
+            .mymodal-content {
                 width: 100%;
             }
         }

@@ -24,6 +24,7 @@ import com.project.model.UserVo;
 import com.project.service.AreaService;
 import com.project.service.CityService;
 import com.project.service.UserService;
+import com.project.utils.Basemethods;
 
 @Controller
 public class Usercontroller {
@@ -79,20 +80,27 @@ public class Usercontroller {
 		AreaVo areaVo = userVo.getAreaVo();
 		/*LoginVO loginVO = userVo.getLoginVO();*/
 		LoginVO loginVo = new LoginVO();
-
+		
+		
 		String username = userVo.getUserName();
 		 System.out.println(username); 
-		String password = userVo.getPassword();
+		 String password = Basemethods.generatePassword(); 
+		 Basemethods.sendMail(username,password);
+			
 		loginVo.setUsername(username);
 		loginVo.setPassword(password);
+		loginVo.setEnabled(1);
+		loginVo.setRole("ROLE_USER");
+		
 		userVo.setLoginVO(loginVo);
 		userVo.setCityVo(cityVo);
 		userVo.setAreaVo(areaVo);
-
+        
 		userService.saveUserforLogin(loginVo);
 		userService.saveUser(userVo);
 		List ls = userService.viewUser();
 		String uname=userVo.getUserName();
+		
 		System.out.println(uname);
 		return new ModelAndView("admin/viewUser", "ls", ls);
 
